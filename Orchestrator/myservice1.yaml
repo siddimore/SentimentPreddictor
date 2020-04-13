@@ -1,0 +1,15 @@
+﻿apiVersion: v1
+kind: Service
+metadata:
+  name: orchestrator
+  labels:
+    service: orchestrator
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 80
+    protocol: TCP
+  selector:
+    app: orchestrator

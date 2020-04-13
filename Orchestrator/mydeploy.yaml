@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    name: orchestrator
+  name: orchestrator
+spec:
+  selector:
+    matchLabels:
+      name: orchestrator
+  template:
+    metadata:
+      labels:
+        name: orchestrator
+      name: orchestrator
+    spec:
+      replicas: 1
+      containers:
+        - name: orchestrator
+          image: "sidmore1981/orchestrator"
+          imagePullPolicy: Always
+          name: orchestrator
+          ports:
+            - containerPort: 80

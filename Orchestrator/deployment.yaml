@@ -1,0 +1,23 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    name: hello-netcore-k8s
+  name: hello-netcore-k8s
+spec:
+  selector:
+    matchLabels:
+      name: hello-netcore-k8s
+  template:
+    metadata:
+      labels:
+        name: hello-netcore-k8s
+      name: hello-netcore-k8s
+    spec:
+      containers:
+      - name: hello-netcore-k8s
+        image: hello-netcore-k8s
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
